@@ -68,13 +68,6 @@
             flex: 1;
             outline: none;
         }
-        .info-block {
-            border-left: 2px solid #222222;
-            padding-left: 15px;
-            margin-bottom: 25px;
-        }
-        .info-title { color: var(--terminal-green); font-weight: bold; margin-bottom: 5px; }
-        .info-value { color: #ffffff; }
     </style>
 </head>
 <body>
@@ -97,31 +90,11 @@ maiz@bgfree-hub:~$ Въведете "help" за списък с команди.<
     const output = document.getElementById('output');
     const input = document.getElementById('input');
 
-    const helpText = `
-Достъпни команди:
-  help      - Показва това съобщение за помощ
-  status    - Справка за текущия мрежов статус
-  credits   - Архитекти на софтуерната задруга
-  clear     - Изчиства екрана на терминала
-`;
+    const helpText = `\nДостъпни команди:\n  help      - Показва това съобщение за помощ\n  status    - Справка за текущия мрежов статус\n  credits   - Архитекти на софтуерната задруга\n  clear     - Изчиства екрана на терминала\n`;
 
-    const statusText = `
-Мрежови статус: ONLINE (Архив)
-База: hybserv-1.9.1+BGFree-p9 & ircd-ratbox+bgfree-p4
-Капацитет: 5000+ реални потребители онлайн едновременно
-Ъптайм на хъба: 192 Дни, 14 часа без рестарт
-Бекбон: CISCO ONS 2.5 Gbps през Telia + TS3-optics: 120ms
-`;
+    const statusText = `\nМрежови статус: ONLINE (Архив)\nБаза: hybserv-1.9.1+BGFree-p9 & ircd-ratbox+bgfree-p4\nКапацитет: 5000+ реални потребители онлайн едновременно\nЪптайм на хъба: 192 Дни, 14 часа без рестарт\nБекбон: CISCO ONS 2.5 Gbps през Telia + TS3-optics: 120ms\n`;
 
-    const creditsHTML = `
-*** BGFree Core Software Fellowship ***
-- maiz (Ангел Нешев) - Net Keeper & Head Developer (Hub & Security)
-- Sofit (Юлиан от Русе) - Senior Services Developer (Hybserv)
-- Decho (Неделчо Станев) - Инфраструктура & SocksCleaner
-- Специална благодарност към demond и kre (Dinko Keric) за насоките.
-
-<br><a href="history.html" style="color: #33ff33; text-decoration: none; border: 1px solid #33ff33; padding: 6px 15px; display: inline-block; font-weight: bold; background: #000; margin-top: 15px; box-shadow: 0 0 10px rgba(51, 255, 51, 0.3);">📜 ПРЕГЛЕДАЙ: ЛЕТОПИС НА МРЕЖАТА</a>
-`;
+    const creditsHTML = `\n*** BGFree Core Software Fellowship ***\n- maiz (Ангел Нешев) - Net Keeper & Head Developer (Hub & Security)\n- Sofit (Юлиан от Русе) - Senior Services Developer (Hybserv)\n- Decho (Неделчо Станев) - Инфраструктура & SocksCleaner\n- Специална благодарност към demond и kre (Dinko Keric) за насоките.\n<br><a href="history.html" style="color: #33ff33; text-decoration: none; border: 1px solid #33ff33; padding: 6px 15px; display: inline-block; font-weight: bold; background: #000; margin-top: 15px; box-shadow: 0 0 10px rgba(51, 255, 51, 0.3);">📜 ПРЕГЛЕДАЙ: ЛЕТОПИС НА МРЕЖАТА</a>\n`;
 
     input.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
@@ -131,23 +104,23 @@ maiz@bgfree-hub:~$ Въведете "help" за списък с команди.<
             if (!val) return;
             
             const userLine = document.createElement('div');
-            userLine.innerHTML = \`<span style="color: #33ff33;">maiz@bgfree-hub:~$</span> \${val}\`;
+            userLine.innerHTML = '<span style="color: #33ff33;">maiz@bgfree-hub:~$</span> ' + val;
             output.appendChild(userLine);
 
             const res = document.createElement('div');
             res.style.margin = "10px 0 20px 0";
 
             if (val === 'help') {
-                res.textContent = helpText;
+                res.innerText = helpText;
             } else if (val === 'status') {
-                res.textContent = statusText;
+                res.innerText = statusText;
             } else if (val === 'credits') {
                 res.innerHTML = creditsHTML;
             } else if (val === 'clear') {
-                output.innerHTML = '💻 BGFree Core Kernel Simulator (v1.9.1-p9) Status: ONLINE\\nmaiz@bgfree-hub:~$';
+                output.innerHTML = '💻 BGFree Core Kernel Simulator (v1.9.1-p9) Status: ONLINE\nmaiz@bgfree-hub:~$';
                 return;
             } else {
-                res.textContent = \`Unknown command: "\${val}". Type "help" for options.\`;
+                res.innerText = 'Unknown command: "' + val + '". Type "help" for options.';
                 res.style.color = "var(--alert-color)";
             }
 
