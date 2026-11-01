@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGFree IRC Network (1998-2005) - Дигитален Музей</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --terminal-bg: #161b22;
+            --accent-color: #58a6ff;
+            --text-color: #c9d1d9;
+            --success-color: #56d364;
+            --alert-color: #f85149;
+            --warning-color: #e3b341;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+        h1, h2, h3 {
+            color: #ffffff;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 8px;
+        }
+        h1 { font-size: 2.2rem; margin-bottom: 5px; }
+        .subtitle { color: var(--accent-color); font-weight: bold; margin-top: 0; margin-bottom: 30px; font-size: 1.1rem; }
+        
+        /* Интерактивен Терминал */
+        .terminal {
+            background-color: var(--terminal-bg);
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 20px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            color: #8b949e;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .output {
+            height: 380px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            margin-bottom: 15px;
+        }
+        .input-line { display: flex; align-items: center; border-top: 1px solid #21262d; padding-top: 15px; }
+        .prompt { color: var(--accent-color); margin-right: 10px; font-weight: bold; }
+        input { background: transparent; border: none; color: #ffffff; font-family: inherit; font-size: 14px; flex: 1; outline: none; }
+        
+        /* Класове за лог съобщения */
+        .sys { color: #8b949e; }
+        .ok { color: var(--success-color); }
+        .warn { color: var(--warning-color); }
+        .err { color: var(--alert-color); font-weight: bold; }
+        .bold { color: #ffffff; font-weight: bold; }
+
+        /* Текстови секции */
+        .section { margin-bottom: 40px; background: #161b22; padding: 25px; border: 1px solid #30363d; border-radius: 6px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        code { background-color: rgba(110,118,129,0.2); padding: 2px 6px; border-radius: 6px; font-family: monospace; font-size: 90%; color: #ff7b72; }
+        pre { background-color: #0d1117; padding: 15px; border-radius: 6px; border: 1px solid #30363d; overflow-x: auto; color: #e6edf3; }
+        footer { margin-top: 60px; color: #8b949e; font-size: 0.9rem; text-align: center; border-top: 1px solid #21262d; padding-top: 20px; width: 100%; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🌐 BGFree IRC Network</h1>
+        <p class="subtitle">Летопис на Дигиталното Наследство & Софтуерни Мемоари (1998–2005)</p>
+    </header>
+
+    <!-- ИНТЕРАКТИВНОТО ЯДРО НА САЙТА -->
+    <div class="terminal">
+        <div class="terminal-header">
+            <span>💻 BGFree Core Kernel Simulator (v1.9.1-p9)</span>
+            <span>Status: ONLINE</span>
+        </div>
+        <div class="output" id="term-out"></div>
+        <div class="input-line">
+            <span class="prompt">maiz@bgfree-hub:~$</span>
+            <input type="text" id="term-in" placeholder="Въведи команда (напр. help, status, credits, die) и натисни Enter..." autofocus />
+        </div>
+    </div>
+
+    <!-- ТЕХНИЧЕСКИ ОДИТ -->
+    <div class="section">
+        <h2>👑 1. Технически профил на инфраструктурата</h2>
+        <ul>
+            <li><strong>Архитектурна база:</strong> Силно модифициран <code>hybserv-1.9.1+BGFree-p9</code> (набъбнал от 345 KB vanilla сорс до 1.5 MB чист, авторски C/C++ код) и пачнат <code>ircd-ratbox+bgfree-p4</code>.</li>
+            <li><strong>Инфраструктура (2000 г.):</strong> Изолиран, сигурен хъб в центъра за данни на CableTel (Бул. „Сливница“ 245, София).</li>
+            <li><strong>Мрежов капацитет:</strong> Backbone през CISCO ONS с колосална за времето си 2.5 Gbps връзка към глобалния оператор Telia и трансатлантически оптичен кабел през TS3 към океана. Удържа мащаб от над <strong>5000+ реални потребители</strong> онлайн едновременно.</li>
+            <li><strong>Параметри на лага:</strong> Лаг между главния хъб и сървисите: <strong>0.2 ms</strong> (закован). Пинг София ↔ ТУ-Варна (<code>GigaX</code>): <strong>32 ms</strong>.</li>
+        </ul>
+    </div>
+
+    <!-- ИНОВАЦИИТЕ В КОДА -->
+    <div class="section">
+        <h2>🛠️ 2. Софтуерни иновации в ядрото</h2>
+        <h3>А. Битката за Кирилицата и Краховете с Паметта</h3>
+        <p>BGFree е първата мрежа, която интегрира чистата кирилица на ниско протоколно ниво in <code>ircd</code> и <code>hybserv</code>. Пренаписани са изцяло на ръка системните макроси за валидация на символи (<code>is_alpha</code>, <code>is_space</code>) за 8-битов енкодинг (CP1251/MIK). Тъй като в C++ тогава <code>char</code> е signed, символите на кирилицата генерираха отрицателни числа в паметта, костващи стотици часове дебъгване на брутални <code>Segmentation fault (core dumped)</code> крахове, докато системата утихне.</p>
+        
+        <h3>Б. Динамичният UID Генератор (Капанът за пирати)</h3>
+        <p>За предпазване от неоторизирани линквания по време на мрежови разцепления (network splits), е разработен Динамичен Генератор на потребителски кодове (UID). При обратен съединителен процес (netmerge), услугите правеха светкавична кръстосана проверка с Ratbox 3.x. Ако пиратски сървър се опита да инжектира фалшиви сесии или права, системата засичаше <code>unknown UID</code>, реагирайки с автоматизиран <strong>G-line и дисконект на пирата</strong> на хардуерно ниво.</p>
+
+        <h3>В. Трикът с точката (`.`) в HostServ</h3>
+        <p>Прикачването на финална точка в маската на хоста (напр. <code>Az.sum.lud.</code>) служеше като системен байпас маркер. Обикновените потребители виждаха маската, но административните ботове и операторите (<code>CS/OS/Gliner</code>) автоматично я игнорираха, виждайки реалния IP адрес за мигновен G-line по <code>*ident</code>.</p>
+    </div>
+
+    <!-- СЪЮЗЪТ И АРХИВИТЕ -->
+    <div class="section">
+        <h2>📜 3. Задругата и автентичните архиви</h2>
+        <p>Мрежата е изградена и оптимизирана благодарение на споделената софтуерна инженерна мисъл между <strong>maiz</strong> (Net Keeper), <strong>Sofit</strong> (Юлиан от Русе — Senior Services Developer за <code>hybserv</code>), <strong>Decho</strong> (Неделчо Станев, предоставил ядрото на <code>SocksCleaner</code> през ICQ от Италия) и фундаменталните насоки от <strong>demond</strong> и хърватския разработчик от ядрото на Hybrid екипа — <strong>kre (Dinko Keric)</strong>.</p>
+        
+        <p><strong>Автентичен откъс от socks.conf (Екзекутор на отворени проксита):</strong></p>
+        <pre>ProxyCheck 1
+CheckNotifyMsg "Внимание! Вашия хост ще бъде проверен за отворени портове/уин гейт сървъри..."
+KillSocks 1
+KillReason "Вие ползвате несигорен сокет на сървър, което може да доведе до малфукция на БгФрее!"</pre>
+    </div>
+
+    <!-- АНАЛИЗ НА СЪВМЕСТИМОСТТА -->
+    <div class="section">
+        <h2>⚠️ 4. Анализ на съвместимостта (+mk5 fail)</h2>
+        <p>Опит за компилация на тези 1.5 MB код директно на съвременна 64-битова ОС ще доведе до критичен срив поради <strong>Pointer Truncation</strong> (кодът е писан за 32-битова архитектура с 4-байтови указатели, докато модерните машини изискват 8 байта). За да работи този дигитален музей, софтуерът изисква изолирана 32-bit среда с поддръжка на старата <code>glibc</code> (Debian 3.0 Woody) или Docker контейнер с флаг <code>--platform linux/386</code>.</p>
+    </div>
+
+    <footer>
+        <p>Идеята остава чиста и свята. Българско ИРЦ наследство (1998 - 2005).</p>
+    </footer>
+</div>
+
+<script>
+    const out = document.getElementById('term-out');
+    const input = document.getElementById('term-in');
+
+    const bootLines = [
+        { t: "[0.0ms] Initializing BGFree IRC Network backbone...", c: "sys" },
+        { t: "[0.2ms] Connecting Core Hub ↔ Services (CableTel, Sofia)...", c: "sys" },
+        { t: "[0.4ms] S2S link established. Latency: 0.2ms (STABLE).", c: "ok" },
+        { t: "[1.1ms] Loading ircd-ratbox+bgfree-p4 core symbols...", c: "sys" },
+        { t: "[1.8ms] Loading hybserv-1.9.1+BGFree-p9 авторски пач (1.5 MB)...", c: "ok" },
+        { t: "[2.2ms] CP1251/MIK 8-bit charset translation matrices: STABLE.", c: "ok" },
+        { t: "[3.0ms] SocksCleaner v2.0 status: RUNNING (Secure Port 9005)", c: "sys" },
+        { t: "==================================================================", c: "sys" },
+        { t: "🚨 СИМУЛАЦИЯ: Сканиране на злонамерен хост в реално време...", c: "warn" },
+        { t: "[SocksCleaner]: Вашия хост ще бъде проверен за отворени портове...", c: "sys" },
+        { t: "[SocksCleaner ALERT]: Открит несигурен сокет / open wingate!", c: "err" },
+        { t: "[SECURITY ACTION]: Мигновен G-line наложен автоматично по *ident.", c: "err" },
+        { t: ">>> Системата утихна. Напиши команда: help, status, credits, die", c: "ok" }
+    ];
+
+    let idx = 0;
+    function type() {
+        if (idx < bootLines.length) {
+            const l = bootLines[idx++];
+const s = document.createElement('span');
+s.className = l.c;
+s.textContent = l.t + "\n";
+out.appendChild(s);
+out.scrollTop = out.scrollHeight;
+setTimeout(type, 600);
+}
+}
+input.addEventListener('keydown', function(e) {
+if (e.key === 'Enter') {
+const val = input.value.trim().toLowerCase();
+if (!val) return;
+const userEcho = document.createElement('span');
+userEcho.className = 'bold';
+userEcho.textContent = \nmaiz@bgfree-hub:~$ ${input.value}\n;
+out.appendChild(userEcho);
+const res = document.createElement('span');
+if (val === 'help') {
+res.className = 'ok';
+res.textContent = "Достъпни команди:\n help    - Показва това съобщение\n status  - Текущ капацитет и стабилност на хъба\n credits - Архитекти на софтуерната задруга\n die     - Спиране на ядрото (изисква флагове)\n";
+} else if (val === 'status') {
+res.className = 'sys';
+res.textContent = "Капацитет: 5000+ реални потребители онлайн едновременно\nЪптайм на S2S линковете: 192 дни, 14 часа без рестарт\nБекбон: CISCO ONS 2.5 Gbps през Telia ↔ TS3\nLag: Hub-Services: 0.2ms\n";
+} else if (val === 'credits') {
+res.className = 'ok';
+res.textContent = "--- BGFree Core Software Fellowship ---\n • maiz (Ангел Нешев) - Net Keeper & Head Developer (Ядро & Сигурност)\n • Sofit (Юлиан от Русе) - Senior Services Developer (Hybserv)\n • Decho (Неделчо Станев) - Инфраструктура и SocksCleaner\n Специални благодарности към dеmond и kre (Dinko Keric) за протоколната подкрепа.\n";
+} else if (val === 'die' || val === 'restart' || val === 'rehash') {
+res.className = 'err';
+res.textContent = "CRITICAL: Niamash flag N i D popitai maiz za poveche info!\n";
+} else if (val === 'whois sofit') {
+res.className = 'ok';
+res.textContent = "Status: Senior Services Developer | Location: Ruse | System: Hybserv Specialist & Translator of 'The IRC Prelude'\n";
+} else {
+res.className = 'warn';
+res.textContent = Unknown command: "${val}". Въведи: help, status, credits, die\n;
+}
+out.appendChild(res);
+out.scrollTop = out.scrollHeight;
+input.value = '';
+}
+});
+window.onload = type;
