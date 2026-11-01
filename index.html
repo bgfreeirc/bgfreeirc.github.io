@@ -203,6 +203,10 @@ res.textContent = "--- BGFree Core Software Fellowship ---\n • maiz (Анге�
 } else if (val === 'die' || val === 'restart' || val === 'rehash') {
 res.className = 'err';
 res.textContent = "CRITICAL: Niamash flag N i D popitai maiz za poveche info!\n";
+                let historyBtn = document.createElement('div');
+            historyBtn.innerHTML = '<a href="history.html" style="color: #33ff33; text-decoration: none; border: 1px solid #33ff33; padding: 5px 15px; margin-top: 10px; display: inline-block; font-weight: bold; background: #000; font-family: monospace;">📜 ПРЕГЛЕДАЙ: ЛЕТОПИС НА МРЕЖАТА</a>';
+            output.appendChild(historyBtn);
+
 } else if (val === 'whois sofit') {
 res.className = 'ok';
 res.textContent = "Status: Senior Services Developer | Location: Ruse | System: Hybserv Specialist & Translator of 'The IRC Prelude'\n";
