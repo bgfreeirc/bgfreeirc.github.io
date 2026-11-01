@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGFree IRC Network - Летопис на едно дигитално наследство</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --terminal-green: #33ff33;
+            --terminal-dark-green: #116611;
+            --text-color: #cccccc;
+            --border-color: #222222;
+            --accent-color: #00ffaa;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            background-color: #000000;
+            box-shadow: 0 0 15px rgba(51, 255, 51, 0.05);
+        }
+        .terminal-header {
+            background-color: #1a1a1a;
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .terminal-buttons {
+            display: flex;
+            gap: 6px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #333;
+        }
+        .dot.red { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green { background-color: #27c93f; }
+        .terminal-title {
+            color: #888888;
+            font-size: 0.9em;
+        }
+        .terminal-body {
+            padding: 30px;
+        }
+        .green-text {
+            color: var(--terminal-green);
+        }
+        .accent-text {
+            color: var(--accent-color);
+        }
+        h1, h2, h3 {
+            color: var(--terminal-green);
+            border-bottom: 1px dashed var(--terminal-dark-green);
+            padding-bottom: 5px;
+        }
+        h1 { font-size: 1.8em; margin-top: 0; }
+        h2 { font-size: 1.4em; margin-top: 30px; }
+        h3 { font-size: 1.1em; }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        .nav-links a {
+            color: var(--terminal-green);
+            text-decoration: none;
+            border: 1px solid var(--terminal-green);
+            padding: 5px 15px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: var(--terminal-green);
+            color: #000000;
+            box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+        }
+        blockquote {
+            border-left: 3px solid var(--accent-color);
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #050505;
+            font-style: italic;
+        }
+        pre {
+            background-color: #050505;
+            border: 1px solid var(--terminal-dark-green);
+            padding: 15px;
+            overflow-x: auto;
+            color: var(--terminal-green);
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li::before {
+            content: "➔ ";
+            color: var(--accent-color);
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .footer {
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            font-size: 0.85em;
+            color: #666666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+        <div class="terminal-title">maiz@bgfree-hub:~/docs/history.html</div>
+        <div></div>
+    </div>
+    
+    <div class="terminal-body">
+        <div class="nav-links">
+            <a href="index.html">⇦ НАЧАЛО (ОДИТ)</a>
+        </div>
+
+        <h1>🌐 BGFree IRC Network: Летопис на едно дигитално наследство</h1>
+        <p class="accent-text"><strong>ЕДНА МРЕЖА. МНОГО ИСТОРИИ. ЕДНО НАСЛЕДСТВО.</strong></p>
+        <p><em>Историята такава, каквато я помня. Посвещава се на всички, които бяха част от нея.</em></p>
+
+        <blockquote>
+            „Някои неща се създават, за да просъществуват. Други се създават, защото никой не може да си представи света без тях.“
+        </blockquote>
+
+        <h2>🏛️ Пролог: Мястото, което времето не може да изтрие</h2>
+        <p>През далечната 1998 година Световната мрежа (WWW) беше много различна. Нямаше социални мрежи, нямаше смартфони, нямаше и изкуствен интелект, който да напише вместо теб сорс кода или есето. Имаше компютри, стационарни телефони със слушалки и Dial-Up модеми – това беше тогавашният начин да разгледаш дигиталния свят.</p>
+        <p>Но в този ранен интернет имаше едно особено място. Място, където можеше да срещнеш хора от различни градове, с които да си пишеш в реално време, без дори да ги познаваш или да си ги виждал някога на живо. Това място се казваше <strong>IRC (Internet Relay Chat)</strong>.</p>
+        <p>За много хора това беше просто чат, за други – начин да убият времето. Но имаше и хора, за които това беше нещо много повече: приятелство, общност, споделени нощи и моменти, които трудно могат да бъдат обяснени на поколението, израснало изцяло със социалните мрежи. И някъде там, в тази дигитална вселена, се зароди идеята за <strong>BGFree IRC Network</strong>.</p>
+
+        <h2>🚀 Въведение: Горещият август на 1998 г.</h2>
+        <p>Всичко започна в един горещ августовски ден след работа. На по чаша бира с приятели се заговорихме за поредните „изцепки“ и административни своеволия в <em>UniBG</em> – най-голямата по това време IRC мрежа в България. И точно тогава, къде на майтап, къде на истина, се роди идеята за създаването на изцяло нова, <strong>Българска свободна мрежа</strong>.</p>
+        <p>Веднага започнахме да обсъждаме дали наистина е технически и хардуерно възможно да се обезпечи подобно мащабно начинание. Хъс и желание не липсваха. По това време работех в град Добрич, в локалния ЛАН интернет доставчик <em>Бергон Нет (Bergon Net)</em>. Тук трябва да спомена две имена: <strong>maiz (Ангел Нешев)</strong> и **NITHMAN (Николай Стоянов)** – главните виновници и двигатели зад раждането на BGFree.</p>
+        <p>Дълго обсъждахме топологията, конфигурацията на мрежата и специфичния софтуер, който трябваше да стартираме и ползваме. И тогава се сблъскахме с първия наистина сериозен проблем: осигуряването на стабилна интернет връзка и качествен български пиъринг (<code>BGPeering</code>), тъй като по онова време интернет трафикът в страната беше силно разделен между отделните големи доставчици.</p>
+        <p>Проблемът беше голям, но желанието ни – още по-голямо. И точно тогава, сякаш като в приказките, се появи „Неволята“ в лицето на <strong>LxZ (Живко Желев)</strong>, системен администратор в Нова Телевизия. След като изслуша най-внимателно нашата идея, той я прегърна като своя и ни подаде ръка в инфраструктурно отношение.</p>
+
+        <h2>⚡ Глава I: „Нека бъде светлина!“ (4 април 1999 г.)</h2>
+<pre>
+maiz@BGFree:~/hybserv$ ./hybserv
+
+[15:06:01] Loading configuration...
+[15:06:01] Loading services...
+[15:06:02] Connecting to ://maiz-bg.com
+
+OS@BGFreeServices connected TS6 ://maiz-bg.com
+Successfully connected.
+Burst completed in 1 sec.
+UID: 1HZ
+
+[15:06:03] Services are online.
+maiz@BGFree:~/hybserv$
+</pre>
+        <p>Това беше началото. <strong>4 април 1999 година, точно в 15:06 часа.</strong> Четири прости реда на екрана, зад които обаче се криеше над 6 месеца упорит, денонощен и безкомпромисен труд.</p>
+        <p>Мрежата стартира скромно, но от сърце, с три линкнати сървъра:</p>
+        <ul>
+            <li><code>://maiz-bg.com</code></li>
+            <li><code>://qoss.com</code></li>
+            <li><code>://nithman.com</code></li>
+        </ul>
+        <p>BGFree започна да расте с лавинообразни темпове, докато в пика си достигна <strong>19 едновременно линкнати сървъра и над 7000 реални потребители онлайн всяка вечер</strong>.</p>
+        <p>Разбира се, по пътя имаше и много проблеми, караници и сърдни – но това е солта на всяка жива мрежа. Опитахме няколко пъти и обединения с други български мрежи – някои успешни, други не толкова. Но основното, здраво ядро на проекта остана непокътнато през годините.</p>
+
+        <h2>🛠️ Глава II: Техническото ДНК на софтуерната крепост</h2>
+        <p>В самото начало на мрежата използвахме чист, непроменен сорс код на <code>ircd-ratbox-2.2.x</code> в комбинация с ванила сорс на <code>Hybserv-1.9.x</code>. Това обаче бързо се промени под натиска на реалността. Реверанс към <strong>Иво (Zer00Cool)</strong> за пачовете по ядрото, последвани от дълбоки архитектурни модификации по кода на <code>Hybserv</code>, извършени от мен.</p>
+        
+        <h3>Ключовите иновации в ядрото:</h3>
+        <ul>
+            <li><strong>Протоколна интеграция:</strong> Пълна поддръжка на <code>OperServ</code>, <code>ChanServ</code> и <code>NickServ</code> директно в системния код.</li>
+            <li><strong>Битката за Кирилицата:</strong> Интеграция на 8-битов енкодинг на протоколно ниво (CP1251/MIK) за премахване на "маймуницата".</li>
+            <li><strong>Имплементиране на HostServ:</strong> Автоматичен spoof и маскиране до 5 хоста на потребител със системния байпас маркер (точката).</li>
+            <li><strong>Пионери в TS6 протокола:</strong> Първите в България, въвели SID/UID комуникация на Ratbox за елиминиране на ник-колазии при нетсплит.</li>
+        </ul>
+
+        <h2>📜 Стената на честта: Хората зад BGFree</h2>
+<p>BGFree не беше просто хардуер. Зад нея стояха идеи, безсънни нощи и безкористен труд. С огромна благодарност отбелязвам имената на софтуерната задруга:</p>
+        <ul>
+            <li><strong>LxZ</strong></li>
+            <li><strong>NITHMAN</strong></li>
+            <li><strong>Zer00Cool</strong></li>
+            <li><strong>Snorky</strong></li>
+            <li><strong>Slyer</strong></li>
+            <li><strong>Bal-Bal</strong></li>
+            <li><strong>Rumen</strong></li>
+            <li><strong>Decho</strong></li>
+            <li><strong>Demond</strong></li>
+            <li><strong>Sofit</strong></li>
+        </ul>
+
+        <h2>🏛️ Заключение</h2>
+        <p>Днес сървърите вече не обменят съобщения. Каналите не се изпълват с разговори вечер. Но кодът и историята са останали тук като живо свидетелство за една златна епоха на независимия български интернет.</p>
+        <p class="green-text"><strong>Започнахме с една идея. Изградихме мрежа. Оставихме история.</strong></p>
+
+        <div class="footer">
+            BGFree IRC Network © 1998-2026. Дигитално културно наследство & Софтуерни мемоари.
+        </div>
