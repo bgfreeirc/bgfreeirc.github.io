@@ -40,6 +40,45 @@
       EOF -- maiz
     -->
     <style>
+        /* Терминално навигационно меню */
+.terminal-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    background-color: #000000;
+    border-bottom: 1px dashed #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    color: #33ff33;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+/* Ефект при посочване с мишката */
+.menu-item:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #33ff33;
+    cursor: pointer;
+}
+
+/* Стил за текущата активна страница */
+.menu-item.active {
+    color: #ffffff;
+    text-shadow: 0 0 5px #33ff33;
+}
+
+/* Стил за страниците, които все още се разработват */
+.menu-item.disabled {
+    color: #225522;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
         :root {
             --terminal-bg: #050505;
             --terminal-green: #33ff33;
@@ -106,6 +145,11 @@
     </style>
 </head>
 <body>
+
+     <nav class="terminal-menu">
+        <a href="https://github.io" class="menu-item active">[ НАЧАЛО ]</a>
+        <a href="history.html" class="menu-item">[ ЛЕТОПИС ]</a>
+    </nav>
 
 <div class="container">
     <h1>🌐 BGFree IRC Network</h1>
