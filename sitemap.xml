@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://sitemaps.org">
-    <!-- Главна страница / Музей -->
     <url>
         <loc>https://github.io</loc>
-        <lastmod>2026-11-05</lastmod>
+        <lastmod>2026-11-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.00</priority>
     </url>
-    <!-- Летопис / История -->
     <url>
         <loc>https://github.iohistory.html</loc>
-        <lastmod>2026-11-05</lastmod>
+        <lastmod>2026-11-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://github.iotao.html</loc>
+        <lastmod>2026-11-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://github.iocredits.html</loc>
+        <lastmod>2026-11-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
     </url>
 </urlset>
